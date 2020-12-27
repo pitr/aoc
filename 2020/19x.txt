@@ -1,0 +1,21 @@
+0 -> 1 2
+1 -> 3 N
+1 -> 1 PP
+PP -> P 1
+2 -> V 1
+2 -> 2 PP
+3 -> the
+1 -> I
+N -> man
+N -> telescope
+P -> with
+V -> saw
+N -> cat
+N -> dog
+N -> pig
+N -> hill
+N -> park
+N -> roof
+P -> from
+P -> on
+P -> in

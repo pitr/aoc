@@ -1,0 +1,57 @@
+require 'rake/testtask'
+
+require_relative 'answers/vm'
+require_relative 'compiler/compiler'
+
+Rake::TestTask.new(:test) do |test|
+  test.libs << 'compiler'
+  test.libs << 'answers'
+  test.pattern = 'compiler/test/*.rb'
+  test.warning = true
+  test.options = '--pride'
+end
+
+task :default => :test
+
+desc 'compile file to intcode'
+task :compile => :clean_args do
+  file = ARGV.shift
+  ir, ic = Compiler.new.compile(File.read(file), file)
+
+  puts "== Parsed"
+  puts ir
+
+  output = ARGV.shift
+  if output
+    File.open(output, "w") { |f| f.write(ic) }
+    puts "== Intcode written to #{output}"
+  else
+    puts "== Intcode"
+    puts ic
+  end
+end
+
+desc 'run intcode from file'
+task :run => :clean_args do
+  ic = File.read(ARGV.shift)
+  vm = VM.new(ic)
+  input = []
+
+  loop do
+    result = vm.run_to_end(input)
+    print result.map(&:chr).join('')
+    break if vm.done
+    input = gets.split('').map(&:ord)
+  end
+end
+
+desc 'decompile intcode'
+task :decompile => :clean_args do
+  ic = File.read(ARGV.shift)
+  vm = VM.new(ic)
+  vm.to_ruby
+end
+
+task :clean_args do
+  ARGV.shift
+end

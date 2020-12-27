@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+# compiler
+gem 'parser'
+gem 'rake'
+gem 'minitest'
+gem 'simplecov'
+
+# answers
+gem 'curses'

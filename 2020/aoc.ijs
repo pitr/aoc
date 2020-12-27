@@ -1,0 +1,1 @@
+in =: fread (''joinstring ;&'.txt')
