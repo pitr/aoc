@@ -7,4 +7,5 @@
 ]boxing ON -style=mid
 ⎕IO←0
 ⎕PP←15
+)copy dfns
 ```

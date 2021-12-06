@@ -1,16 +1,8 @@
-f ← ⍎¨¨(''∘≢¨⊆⊢)⊃⎕nget'04.txt' 1
+f ← ⍎¨¨(''∘≢¨⊆⊢)⊃⎕NGET'in/04.txt' 1
 d b ← (⊃⊃f)(↑↑ 1↓f)             ⍝ dice, board
 
-wp ← d⍳b                    ⍝ turns to win per position
-wc ← ⌊/ (⌈/[1] ⌊ ⌈/) wp     ⍝ turns to win per card
+win ← ⌊/ (⌈/[1] ⌊ ⌈/) d⍳b       ⍝ index of winning dice per card
+score ← { d[win[⍵]] × +/, ⍵⌷b×~b∊ (1+win[⍵])↑d }
 
-play ← {
-    ⍺ ← (≢b)⍴0
-    marked ← b∊⍵↑d
-    won ← ∨/ (∧/[1] ∨ ∧/) marked
-    ⍺⍺/won : d[⍵-1] × +/, (won-⍺)⌿ b×~marked
-    won ⍺⍺ ∇∇ ⍵+1
-}
-
-∨ play 1        ⍝ part 1
-∧ play 1        ⍝ part 2
+score win⍳ ⌊/ win       ⍝ part 1: score of first card to win
+score win⍳ ⌈/ win       ⍝ part 2: score of last card to win
