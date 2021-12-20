@@ -13,10 +13,10 @@ dists ← {~∘0 , (</¨⍳2⍴≢⍵)×∘.manh⍨⍵}¨f
 
 ⍝ find scanner pairs with at least 66 common distances (2!12).
 ⍝ return bidirected graph in vector representation.
-graph ← ⍸¨↓ (⊢∨⍉) ∘.{⍺≤⍵:0 ⋄ (2!m)≤((≢∩)×≢)/dists[⍺ ⍵]}⍨⍳≢f
+graph ← ⍸¨↓ (⊢∨⍉) ∘.{⍺≤⍵:0 ⋄ (2!m)≤(≢∩)/dists[⍺ ⍵]}⍨⍳≢f
 
-resolve ← {             ⍝ resolve scanner ⍺ based on ⍺⍺, ⍵ is known origins
-    0=⍺:(0 0 0)(⍺⊃f)    ⍝ scanner 0 has origin 0, beacons unchanged
+resolve ← {             ⍝ resolve scanner ⍺ based on ⍺⍺, ⍵ - resolved scanners
+    ¯1=⍺⍺:(0 0 0)(⍺⊃f)  ⍝ initial scanner has origin 0, beacons unchanged
     b ← ⍺⊃f             ⍝ beacons of ⍺
     po pb ← ⍺⍺⊃⍵        ⍝ parent's origin, beacons
     ⊃,/{
@@ -28,14 +28,14 @@ resolve ← {             ⍝ resolve scanner ⍺ based on ⍺⍺, ⍵ is known 
     }¨rot
 }
 
-dfs ← {                 ⍝ ⍺ - current scanner, ⍺⍺ - parent, ⍵ - visited
+dfs ← {                 ⍝ ⍺ - scanner, ⍺⍺ - parent, ⍵ - visited
     ⍬≢⍺⊃⍵: ⍵            ⍝ break if ⍺ was visited
-    next ← ⍺⊃graph      ⍝ scanners connected to ⍺
-    v ← ⊂⍺(⍺⍺resolve)⍵
-    ⊃⍺ ∇∇/next, ⊂v@⍺⊢⍵  ⍝ traverse down
+    ob ← ⍺⍺ resolve/⍺ ⍵ ⍝ resolve origin, beacons for ⍺
+    next ← ⍺⊃graph      ⍝ get next scanners to visit
+    ⊃⍺ ∇∇/next, ⊂ob@⍺⊢⍵ ⍝ traverse down
 }
 
-⍝ depth-first traversal of scanner graph.
+⍝ depth-first traversal of scanners graph.
 scanners beacons ← ↓⍉↑ 0(¯1 dfs)(≢graph)⍴⊂⍬
 
 ≢↑ ∪/beacons
