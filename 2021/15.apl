@@ -1,3 +1,5 @@
+'wpath' 'wcost'⎕CY'dfns'
+
 m ← ↑⍎¨¨⊃⎕NGET'in/15.txt'1
 
 risk ← { ⍝ using http://dfns.dyalog.com/n_wGraphs.htm
