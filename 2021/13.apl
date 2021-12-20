@@ -3,4 +3,4 @@ board ← {1@⍵⊢(1+↑⌈/⍵)⍴0}⍎¨pos
 fold ← {f←{(⌊.5×≢⍵)↑⍵∨⊖⍵} ⋄ f⍣⍵⍉f⍣⍺⊢board}
 
 +/,⊃fold/'xy'∊⊃xy
-' ▮'[⊃fold/+/'xy'∘.∊xy]
+' █'[⊃fold/+/'xy'∘.∊xy]

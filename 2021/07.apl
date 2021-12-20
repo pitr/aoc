@@ -1,3 +1,5 @@
+'bsearch' 'mean'⎕CY'dfns'
+
 n ← ⍎¨','(≠⊆⊢)⊃⊃⎕NGET'in/07.txt'1
 
 tri ← { (⍵ × ⍵+1)÷2 }       ⍝ Triangular number, 1+2+..+⍵
@@ -25,6 +27,7 @@ dx ← | n ∘.- ⍳⌈/n
 ⍝ Paper with proof that dx is within mean +/- 0.5
 ⍝ https://www.reddit.com/r/adventofcode/comments/rawxad/2021_day_7_part_2_i_wrote_a_paper_on_todays/
 
+)off
                             ⍝ find dx such that the fuel use is lowest.
 +/ { +/1+⍳⍵ }¨ |n-dx        ⍝ by definition of the puzzle.
 +/ { .5 × ⍵ × ⍵+1 }¨ |n-dx  ⍝ replace 1+2+..+⍵ with a triangular formula.

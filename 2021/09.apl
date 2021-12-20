@@ -14,4 +14,3 @@ window ← {∆ ← ⍺⍺ ⋄ {⍵[1;1] ∆ ,⍵×3 3⍴⍳2}⌺3 3⊢⍵}
 ⍝                       filled-converged ^
 ⍝                     from numbered low points ^
 ⍝                                          disregarding peaks ^
-

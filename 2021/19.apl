@@ -3,7 +3,7 @@
 f ← (⍎'¯'@('-'∘=))¨¨ ','(∊¨⊆⊢) ⊃⎕NGET'in/19.txt'1
 m ← 12
 
-manh ← +/|⍤-
+manh ← +/∘|-
 
 ⍝ all 24 90-degree rotation matrices.
 rot ← {⍵/⍨1=det¨⍵},(↓pmat 3)∘.{⍵@(⍺,¨⍳3)⊢3 3⍴0} ,1-2×⍳2 2 2

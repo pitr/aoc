@@ -1,3 +1,5 @@
+'dec'⎕CY'dfns'
+
 f ← ∊{2 2 2 2⊤dec⍵}¨¯1↓⊃⎕NGET'in/16.txt'
 
 read ← { ret←⍵↑f ⋄ f↓⍨←⍵ ⋄ ret }
