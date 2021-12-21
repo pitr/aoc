@@ -5,7 +5,7 @@
 ### IDE
 
 ```
-]CD code/aoc/2021
+]cd code/aoc/2021
 ]boxing on -style=mid -trains=parens -fns=on
 ```
 
