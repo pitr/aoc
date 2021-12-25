@@ -12,7 +12,7 @@ vol ← {
         ⊃m[∆ x;∆ y;∆ z] ← ⊃⍵    ⍝ update cuboids with on/off
     }¨⍵                         ⍝ for each line
 
-    +.×/⌽ (⊂m), |2-/¨cu         ⍝ calculate volume
+    +.×/⌽ (⊂m), 2-⍨/¨cu         ⍝ calculate volume
 }
 
 vol f/⍨(50≥⌈/⍤|⍤∊)¨f
