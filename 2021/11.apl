@@ -1,7 +1,9 @@
-f ← ↑⍎¨¨⊃⎕NGET'in/11.txt' 1
+f ← ↑⍎¨¨⊃⎕NGET'in/11.txt'1
 
 step ← {0@(9∘<) ⍵+ ⍵{1+{+/,⍵}⌺3 3⊢9<⍺+⍵}⍣≡1}
-run ← {⍺ ⍺⍺ ⍵: ⍺ ⋄ w ← step ⍵ ⋄ (⍺ ⍵⍵ w) ∇ w}
 
-+/ ⍬ {100=≢⍺} run {⍺,+/0=,⍵} f
-   0 {0=+/,⍵} run {⍺+1} f
+⍝ pow :: A (A ∇ S -> A) ∇∇ (A ∇ S -> B) S => S where A=accumulator S=state B=bool
+pow ← {⍺ ⍵⍵ ⍵: ⍺ ⋄ (⍺∘⍺⍺ ∇ ⊢) step ⍵}
+
++/ ⍬ {⍺,+/0=,⍵} pow {100=≢⍺} f
+   0 {⍺+1}      pow {0∧.=,⍵} f

@@ -1,9 +1,7 @@
-n ← {⍉ 2 2⍴ ⍎¨ (⍵∊⎕D)⊆⍵}¨ ⊃⎕NGET'in/05.txt'1
+f ← {2 2⍴ ⍎¨ (⍵∊⎕D)⊆⍵}¨ ⊃⎕NGET'in/05.txt'1
 
-solve ← {
-    coords ← {⊃,¨/ {⍺- (×d)× ⍳1+| d←⍺-⍵}/⍵}
-    +/ {2≤≢⍵}⌸ ⊃,/ coords¨⍵     ⍝ flatten and count repetitions
-}
+coords ← {⊃,¨/ {⍺- (×d)× ⍳1+| d←⍺-⍵}⌿⍵} ⍝ all coords between two points
+score ← {+/ 1< {≢⍵}⌸ ⊃,/ ⍵}             ⍝ count repetitions
 
-solve ((∨/=/)¨n)/n  ⍝ part 1
-solve n             ⍝ part 2
+score coords¨ ((∨/=⌿)¨f)/f  ⍝ part 1
+score coords¨ f             ⍝ part 2

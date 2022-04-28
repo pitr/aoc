@@ -1,6 +1,6 @@
 'bsearch' 'mean'⎕CY'dfns'
 
-n ← ⍎¨','(≠⊆⊢)⊃⊃⎕NGET'in/07.txt'1
+n ← ⍎⊃⊃⎕NGET'in/07.txt'1
 
 tri ← { (⍵ × ⍵+1)÷2 }       ⍝ Triangular number, 1+2+..+⍵
 median ← { ⍵[⍋⍵][⌊.5×≢⍵] }

@@ -1,4 +1,4 @@
-f ← ↑⍎¨¨⊃⎕NGET'in/09.txt' 1
+f ← ↑⍎¨¨⊃⎕NGET'in/09.txt'1
 
 ⍝ applies ⍺⍺ for each element and its direct neighbours
 window ← {∆ ← ⍺⍺ ⋄ {⍵[1;1] ∆ ,⍵×3 3⍴⍳2}⌺3 3⊢⍵}

@@ -1,7 +1,7 @@
 parse ← {
-    punct ← '[],'∘.=⍵
-    nums ← ⍎¨(~∨⌿punct) ⊆ ⍵
-    dpth ← ⊃¨(~∨⌿punct) ⊆ -⌿+\2↑punct
+    punc ← '[],'∘.=⍵
+    nums ← ⍎¨(~∨⌿punc) ⊆ ⍵
+    dpth ← ⊃¨(~∨⌿punc) ⊆ -⌿+\2↑punc
     nums dpth
 }
 

@@ -1,8 +1,8 @@
-f ← ⊃⎕NGET'in/10.txt' 1
+f ← ⊃⎕NGET'in/10.txt'1
 
-open   ← '([{<'
-close  ← ')]}>'
-pairs ← ↓open,[.5]close
+open  ← '([{<'
+close ← ')]}>'
+pairs ← ↓⍉↑open close
 
 r ← {((~⊢∨¯1∘⌽)⍺⍷⍵) / ⍵}        ⍝ remove substring
 simp ← {⊃ (r/pairs,⊢)⍣≡ ⊂⍵}¨f   ⍝ simplify each line

@@ -1,4 +1,4 @@
-n ← ↓⍉↑ ('1'=⊢) ⊃⎕NGET'in/03.txt'1
+n ← ↓⍉↑ '1'∘= ⊃⎕NGET'in/03.txt'1
 
 mf ← +/≥≢-+/ ⋄ lf ← +/<≢-+/     ⍝ most/least frequent
 r ← {1=≢⍵: ⍵ ⋄ ⍵∩⍸⍺=⍺⍺ ⍺[⍵]}    ⍝ reducer, computes subset of ix using function
