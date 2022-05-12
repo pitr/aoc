@@ -1,14 +1,14 @@
 p1 ← ⊖2 4⍴1+⎕A⍳ ∩∘⎕A ∊⊃⎕NGET'in/23.txt'1
 p2 ← p1 {↑⌽1⌽⍺,⍵}⍥↓ 2 4⍴1+⎕A⍳∊'DCBA' 'DBAC'
 
-cost ← 0 , 10*⍳4                    ⍝ cost per step (ignore 0-index)
+cost ← 10*⍳4                        ⍝ cost per step
 doors ← 2 4 6 8                     ⍝ door indices in hallway
 between ← {+/×(⌊/⍵)↓(1+⌈/⍵)↑⍺}      ⍝ num of pods between ⍵ inclusively
 
 ⍝ cost to get from room to door and back
 base ← {
     depth ← ⊃⍴⍵
-    out ← +/∊cost[⍵]×4/⍪⌽1+⍳depth
+    out ← +/∊cost[⍵-1]×4/⍪⌽1+⍳depth
     in  ← 10⊥4⍴2!1+depth
     out+in
 }
@@ -24,7 +24,7 @@ next ← {
         0≠depths[hall[⍺]-1]: ⍵      ⍝ check if room is empty
         door ← doors[hall[⍺]-1]
         1≠(1↓⍵) between ⍺ door: ⍵   ⍝ check if pod can get to room
-        cost ← (⊃⍵)+cost[hall[⍺]]×|door-⍺
+        cost ← (⊃⍵)+cost[hall[⍺]-1]×|door-⍺
         cost, 0@⍺⊢1↓⍵               ⍝ merge all boards, sum all costs
     }/(⍸×hall),⊂0,hall              ⍝ indices of pods in hallway
     0≠⊃in: ⊂depths@(1+doors)⊢in
@@ -36,7 +36,8 @@ next ← {
         pod ← input[depths[⍺]-1;⍺]
         door ← doors[⍺]
         0≠hall between door ⍵: ⍬    ⍝ check if pod can get out of room
-        (cost[pod]×|door-⍵), (-∘1)@door⊢depths@doors⊢pod@⍵⊢hall
+        cost ← cost[pod-1]×|door-⍵
+        cost, (-∘1)@door⊢depths@doors⊢pod@⍵⊢hall
     }(⍸0=hall)~doors
 }
 
