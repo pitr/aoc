@@ -11,4 +11,4 @@ dfs ← {                 ⍝ count paths
 }
 
 ∊ dfs ⍬
-(∊ ∧ (⊢≢∪)⍤⊢) dfs ⍬
+(∊ ∧ ⊢≢∪⍤⊢) dfs ⍬

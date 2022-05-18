@@ -1,4 +1,4 @@
-⎕CY'dfns'
+'words'⎕CY'dfns'
 a b ← ↓{3(⍎⊃∘words)¨⍵[5 15∘.+18×⍳14]}⊃⎕NGET'in/24.txt'1
 
 solve ← {
