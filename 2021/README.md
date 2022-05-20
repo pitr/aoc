@@ -15,6 +15,7 @@
 { settings: {
 	Default_IO: 0,
 	Default_PP: 15,
+	Default_PW: 32767,
 	Dyalog_LineEditor_Mode: 1,
 	MAXWS: "4G",
 	Log_Size: "2M",
