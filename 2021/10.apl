@@ -2,10 +2,9 @@ f ← ⊃⎕NGET'in/10.txt'1
 
 open  ← '([{<'
 close ← ')]}>'
-pairs ← ↓⍉↑open close
+pairs ← open,¨close
 
-r ← {((~⊢∨¯1∘⌽)⍺⍷⍵) / ⍵}        ⍝ remove substring
-simp ← {⊃ (r/pairs,⊢)⍣≡ ⊂⍵}¨f   ⍝ simplify each line
+f ← { ⍵/⍨ ~ s+¯1⌽s← +⌿↑ pairs ⍷¨ ⊂⍵}⍣≡¨ f
 
-+/3 57 1197 25137 0[i←close⍳(⊃~∘open)¨simp]
-{⍵[⍋⍵][⌊0.5×≢⍵]} {(⊣+5×⊢)/1+open⍳⍵}¨ (i=4)/simp
++/3 57 1197 25137 0[i←{close⍳⊃⍵~open}¨f]
+(⊢⌷⍨⍋⌷⍨(⌊.5×≢)) {(⊣+5×⊢)/1+open⍳⍵}¨ f/⍨i=4
