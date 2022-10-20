@@ -1,8 +1,8 @@
 f ← (↑⍎¨)¨(×∘≢¨⊆⊢)⊃⎕NGET'in/04.txt'1
-deck board ← (∊⊃f) (1↓f)
+deck boards ← (∊⊃f) (1↓f)
 
-wins ← {⌊/ (⌈⌿ , ⌈/) deck⍳⍵}¨board      ⍝ index of winning dice per card
-score ← { deck[wins[⍵]] × (⍵⊃board) {+/∊⍺×~⍺∊⍵} (1+wins[⍵])↑deck }
+moves ← {⌊/ (⌈⌿ , ⌈/) deck⍳⍵}¨boards    ⍝ index of winning dice per card
+scores ← boards {deck[⍵] × +/∊⍺×~⍺∊(1+⍵)↑deck}¨ moves   ⍝ scores per card
 
-score wins⍳ ⌊/ wins     ⍝ part 1: score of first card to win
-score wins⍳ ⌈/ wins     ⍝ part 2: score of last card to win
+scores[moves⍳ ⌊/moves]  ⍝ part 1: score of first card to win
+scores[moves⍳ ⌈/moves]  ⍝ part 2: score of last card to win

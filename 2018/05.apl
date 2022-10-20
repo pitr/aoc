@@ -1,7 +1,6 @@
 f ← ⎕UCS ⊃⊃⎕NGET'in/05.txt'1
 
-dedup ← {⍵/⍨ ((,∘0)⍱(0∘,)) ⍺=2-/⍵}
-run ← {⊃dedup/¯32,32,⊂⍵}⍣≡
+react ← ≢{-⍵/⍨d∧¯1⌽d←32≠2-/⍵,0}⍣2⍣≡
 
-≢run f
-⌊/ {≢run f~⍵,32+⍵}¨⎕UCS ⎕A
+react f
+⌊/ {react f~⍵+0 32}¨⎕UCS ⎕A

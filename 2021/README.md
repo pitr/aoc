@@ -2,12 +2,7 @@
 
 ## Setup
 
-### IDE
-
-```
-]cd code/aoc/2021
-]boxing on -style=mid -trains=parens -fns=on
-```
+Coded in Sublime Text. [Sublime APL](https://github.com/StoneCypher/sublime-apl) package used.
 
 ### `~/.dyalog/dyalog.dcfg`
 
@@ -23,6 +18,10 @@
 ```
 
 ### `APL.sublime-build`
+
+Custom build system that relies on dyalogscript.
+
+Note: replace with your own PATH, `~/` for home directory doesn't work.
 
 ```
 {
@@ -40,6 +39,7 @@
 
 ```
 {
+	"auto_complete": false,
 	"font_face": "APL386 Unicode",
 	"font_size": 22,
 	"translate_tabs_to_spaces": true,
