@@ -1,4 +1,4 @@
-data ← (⍎¨⎕D∘(∊⍨⊆⊢))¨⊃⎕NGET'in/04.txt'1
+al ah bl bh ← ↓⍉↑(⍎¨⎕D∘(∊⍨⊆⊢))¨⊃⎕NGET'in/04.txt'1
 
-⎕← +/ { (≠/ ∨ 0 0≡⊢) ×-⌿2 2⍴⍵ }¨data
-⎕← +/ { ⍱/>⌿ ⌽@1⊢⍉2 2⍴⍵ }¨data
+⎕← +/ ((al≤bl)∧(bh≤ah)) ∨ ((bl≤al)∧(ah≤bh))
+⎕← +/ (al≤bh)∧(bl≤ah)
