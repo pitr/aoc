@@ -1,18 +1,11 @@
-alph ← ' ',⎕A
 cranes moves ← {(×≢¨⍵)⊆⍵}⊃⎕NGET'in/05.txt'1
-cranes ← {(⍵⍳0)↑⍵}¨↓⍉⊖↑{alph⍳∊⍵⊆⍨(≢⍵)⍴0 1 0 0}¨¯1↓cranes
+cranes ← {(⍵/⍨1=4|⍳⍴⍵)∩¨⊂⎕A}↓⍉↑cranes
 moves ← {0 ¯1 ¯1+⍎¨(⍵∊⎕D)⊆⍵}¨moves
+
 run ← {
-    ∆ ← ⍺⍺
-    alph[¯1↑¨⊃{
-        num from to ← ⍺
-        cranes ← ⍵
-        box ← ∆(-num)↑from⊃cranes
-        cranes[from] ← ⊂(-num)↓from⊃cranes
-        cranes[to] ,← ⊂box
-        cranes
-    }/⌽(⊂cranes),⍵]
+    boxes ← ⍺⍺ (⊃⍺)↑⊃⍵[⍺[1]]
+    ((⊂(⊃⍺)↓⊃),(⊂boxes,1⊃⊢))@(1↓⍺)⊢⍵
 }
 
-⎕← ⌽ run moves
-⎕← ⊢ run moves
+⎕← ⊃¨⊃⌽run/⌽(⊂cranes),moves
+⎕← ⊃¨⊃⊢run/⌽(⊂cranes),moves
