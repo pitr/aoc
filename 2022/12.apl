@@ -1,18 +1,19 @@
 'stpath' 'span'⎕CY'dfns'
 
-map ← 96@(83∘=)⊢123@(69∘=)⊢ ⎕UCS↑ ⊃⎕NGET'in/12.txt'1
-
+a S E ← 0 ¯1 1 + ⎕UCS'aaz'
+map ← S@(=∘(⎕UCS'S')) E@(=∘(⎕UCS'E')) ⎕UCS↑ ⊃⎕NGET'in/12.txt'1
 flat ← ,map
-graph ← ,{
-    el  ← ⊃⊃⍵[1;1]
-    nei ← (⊂0 0)~⍨ ,⍵×3 3⍴⍳2
-    ⊂ ¯1+1⊃¨nei/⍨el≤1+⊃¨nei
-}⌺3 3⊢map,¨ 1+(⍴map)⍴⍳≢flat
 
-tree ← graph span flat⍳123  ⍝ span tree trom "E"
+graph ← ,{
+    ele ← ⊃⊃⍵[1;1]
+    nei ← ,⍵×3 3⍴⍳2         ⍝ neighbors :: [(elevation,id)]
+    ⊂ 1⊃¨ (ele≤1+⊃¨nei)/nei ⍝ ids of neighbors that can be visited
+}⌺3 3⊢map,¨ (⍴map)⍴⍳≢flat
+
+tree ← graph span flat⍳E    ⍝ span tree trom "E"
 
 ⍝ using http://dfns.dyalog.com/n_stpath.htm
-steps ← { ¯1+ ⌊/ 0~⍨ ≢¨ tree∘stpath¨ ⍸flat=⍵ }
+steps ← { ⌊/ ({≢ 1↓ tree stpath ⍵}¨ ⍸flat=⍵) ~ 0 }
 
-⎕← steps 96 ⍝ to "S"
-⎕← steps 97 ⍝ to "a"
+⎕← steps S
+⎕← steps a
