@@ -1,5 +1,5 @@
 file ← 1↓⍉↑((×≢¨)⊆⊢)⊃⎕NGET'in/11.txt'1
-file ← ('× old'⎕R'* 2')¨('\*'⎕R'×')¨file
+file ← ('× old'⎕R'* 2')∘('\*'⎕R'×')¨file
 items arg mod true false ← ↓{⍎(⊃⍸⍵∊⎕D)↓⍵}¨file
 op ← '+×*'⍳23⌷¨file[1;]
 math ← { 0=⍺⍺: ⍺+⍵ ⋄ 1=⍺⍺: ⍺×⍵ ⋄ 2=⍺⍺: ⍵*⍺ }
