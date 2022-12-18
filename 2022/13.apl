@@ -12,4 +12,4 @@ compare ← {
 }
 
 ⎕← +/ 1+⍸ (1=compare)¨data
-⎕← ×/ 1 2+ +⌿ (⊃,/data) ∘.{1=compare ⍺⍵} ⎕JSON¨ '[[2]]' '[[6]]'
+⎕← ×/ 1 2+ +⌿ (⊃,/data) ∘.{1=compare ⍺⍵} 2 6

@@ -1,4 +1,4 @@
-names flows links ← ↓⍉↑ {(⊃⍵)(⍎1⊃⍵)(2↓⍵)}∘('([A-Z]{2}|(\d+))'⎕S'\1')¨⊃⎕NGET'in/16.txt'1
+names flows links ← ↓⍉↑ {(⊃⍵)(⍎1⊃⍵)(2↓⍵)}∘('[A-Z]{2}|(\d+)'⎕S'&')¨⊃⎕NGET'in/16.txt'1
 flows ← flows[sort ← ⍒flows]
 names ← names[sort]
 links ← (names∘⍳)¨links[sort]
@@ -15,4 +15,4 @@ _← (1↓⍳30) ∘.{
 } ⍳≢names
 
 ⎕← ⌈/dp[29;start;]
-⎕← ⌈/ (⊢+⌽)dp[25;start;]
+⎕← ⌈/ (⊢+⌽) dp[25;start;]
