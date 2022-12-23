@@ -1,4 +1,4 @@
-cub ← ⎕D∘(⍎¨∊⍨⊆⊢)¨ ⊃⎕NGET'in/18.txt'1
+cub ← ⍎¨ ⊃⎕NGET'in/18.txt'1
 map ← 1@cub⊢(⊃1+⌈/cub)⍴0
 nei ← 1@4 22⊢18⌽27↑9⍴⍳2
 
