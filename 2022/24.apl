@@ -1,6 +1,6 @@
 offset ← ¯1j¯2
 imag ← {+/0j1 1×⍵}
-map ← '#'⍪ (↑⊃⎕NGET'in/24e.txt'1) ⍪'#'
+map ← '#'⍪ (↑⊃⎕NGET'in/24.txt'1) ⍪'#'
 shape ← ¯4 ¯2+⍴map
 walls ← offset+ imag¨⍸'#'=map
 dirs ← 1 ¯1 0j1 0j¯1['><v^'⍳(,map)~'.#']
