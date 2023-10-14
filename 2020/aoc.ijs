@@ -1,1 +1,1 @@
-in =: fread (''joinstring ;&'.txt')
+in =: fread (''joinstring 'in/';;&'.txt')

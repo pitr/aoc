@@ -1,7 +1,7 @@
 A = {}
 I = Hash.new { |hsh, key| hsh[key] = 0 }
 
-File.read("21.txt").lines.each do |l|
+File.read("in/21.txt").lines.each do |l|
     w=l.scan(/(\w+)/).flatten
     ix=w.index('contains')
     is,as = w[0...ix],w[ix.succ..]

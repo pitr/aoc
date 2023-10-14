@@ -4,9 +4,9 @@ def day1_1(inp)
   h.each_key { |k| return k*(2020-k) if h[2020-k] }
 end
 
-puts day1_1(File.read("01e.txt")) # should be 514579
+puts day1_1(File.read("in/01e.txt")) # should be 514579
 
-puts day1_1(File.read('01.txt'))
+puts day1_1(File.read('in/01.txt'))
 
 
 def day1_2(inp)
@@ -18,6 +18,6 @@ def day1_2(inp)
   }}
 end
 
-puts day1_2(File.read("01e.txt")) # should be 241861950
+puts day1_2(File.read("in/01e.txt")) # should be 241861950
 
-puts day1_2(File.read('01.txt'))
+puts day1_2(File.read('in/01.txt'))

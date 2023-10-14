@@ -1,4 +1,4 @@
-dp,cp = File.read("25.txt").split.map(&:to_i)
+dp,cp = File.read("in/25.txt").split.map(&:to_i)
 
 def find_loop(s,t,v=1,l=0)
     until v==t

@@ -5,8 +5,8 @@ def day4_1(inp)
   inp.split("\n\n").select{|s|K.all?{|kk|s.include?(kk)}}.count
 end
 
-puts day4_1(File.read('04e.txt')) # should be 9
-puts day4_1(File.read('04.txt'))
+puts day4_1(File.read('in/04e.txt')) # should be 9
+puts day4_1(File.read('in/04.txt'))
 
 
 def day4_2(inp)
@@ -27,6 +27,5 @@ def day4_2(inp)
   }.count
 end
 
-puts day4_2(File.read('04e.txt')) # should be 4
-puts day4_2(File.read('04.txt'))
-
+puts day4_2(File.read('in/04e.txt')) # should be 4
+puts day4_2(File.read('in/04.txt'))

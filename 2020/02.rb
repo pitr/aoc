@@ -6,8 +6,8 @@ def day2_1(inp)
   }
 end
 
-puts day2_1(File.read('02e.txt')) # should be 2
-puts day2_1(File.read('02.txt'))
+puts day2_1(File.read('in/02e.txt')) # should be 2
+puts day2_1(File.read('in/02.txt'))
 
 
 def day2_2(inp)
@@ -17,5 +17,5 @@ def day2_2(inp)
   }
 end
 
-puts day2_2(File.read('02e.txt')) # should be 1
-puts day2_2(File.read('02.txt'))
+puts day2_2(File.read('in/02e.txt')) # should be 1
+puts day2_2(File.read('in/02.txt'))

@@ -1,4 +1,4 @@
-input = File.read("16.txt").split("\n\n")
+input = File.read("in/16.txt").split("\n\n")
 
 rules = input[0].lines.map do |l|
     m = l.split(?:)

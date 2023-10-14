@@ -1,6 +1,6 @@
 require 'set'
 
-l = File.read("24.txt").lines.map(&:chomp)
+l = File.read("in/24.txt").lines.map(&:chomp)
 
 m = Hash.new(0)
 

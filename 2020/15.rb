@@ -1,4 +1,4 @@
-N = File.read("15.txt").split(',').map(&:to_i)
+N = File.read("in/15.txt").split(',').map(&:to_i)
 
 def solve(n)
     last = N.last

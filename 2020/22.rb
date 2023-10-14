@@ -1,6 +1,6 @@
 require 'set'
 
-d = File.read("22.txt").split("\n\n").map { |s| s.lines[1..].map(&:to_i) }
+d = File.read("in/22.txt").split("\n\n").map { |s| s.lines[1..].map(&:to_i) }
 
 $game_id = 0
 

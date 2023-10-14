@@ -1,6 +1,6 @@
 require 'rake/testtask'
 
-require_relative 'answers/vm'
+require_relative './vm'
 require_relative 'compiler/compiler'
 
 Rake::TestTask.new(:test) do |test|

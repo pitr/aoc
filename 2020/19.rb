@@ -1,4 +1,4 @@
-rls, input = File.read("19.txt").split("\n\n")
+rls, input = File.read("in/19.txt").split("\n\n")
 
 rls = rls.lines.map do |line|
     line = line.chomp.gsub(': ', '=>[[') + ']]'

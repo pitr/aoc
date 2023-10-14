@@ -27,7 +27,7 @@ class Tile
     end
 end
 
-T = File.read("20.txt").split("\n\n").map { |t| Tile.new(t) }
+T = File.read("in/20.txt").split("\n\n").map { |t| Tile.new(t) }
 
 
 POS = 4.times.map {|i|[:transpose,:reverse,:mirror].combination(i).to_a}.flatten(1)

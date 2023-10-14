@@ -1,4 +1,4 @@
-seed = File.read("23.txt").chars.map(&:to_i)
+seed = File.read("in/23.txt").chars.map(&:to_i)
 
 
 class Cups
