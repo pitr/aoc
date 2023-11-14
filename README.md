@@ -7,7 +7,7 @@ My solutions to Advent of Code.
 - 2017 - APL complete
 - 2018 - APL complete
 - 2019 - Ruby complete
-- 2020 - Mix of J and Ruby, complete
+- 2020 - Mix of J/Ruby/APL, complete
 - 2021 - APL complete
 - 2022 - APL complete, some K
 
