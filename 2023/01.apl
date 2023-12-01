@@ -1,6 +1,7 @@
-w ← 'zero' 'one' 'two' 'three' 'four' 'five' 'six' 'seven' 'eight' 'nine'
+w ← '/'(≠⊆⊢)'zero/one/two/three/four/five/six/seven/eight/nine'
 
-l ← ⊃⎕NGET'in/01.txt'1
+f ← ⊃⎕NGET'in/01.txt'1
+cali ← {10⊥∊1 ¯1↑¨⊂⍵~0}
 
-⎕← +/ {⍎∊1 ¯1↑¨⊂⍵∩⎕D}¨l
-⎕← +/{10⊥∊1 ¯1↑¨{⍵~¨0}(⊂10|⎕D⍳⍵)⌈⌈⌿{⍵×⍳≢⍵}w⍷¨⊂⍵}¨l
+⎕← +/ cali¨d←10|⎕D∘⍳¨f
+⎕← +/ cali¨d⌈(⍳10)⌈.×w∘.⍷f
