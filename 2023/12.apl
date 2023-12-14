@@ -5,7 +5,7 @@ solve ← {
     s g ← ⍺ ⍵                       ⍝ state and groups
     ⊃⊃{                             ⍝ return DP[0,0]
         n ← g[⍺]                    ⍝ size of current group
-        p ← ⍸(n∧/×s)∧1≠n↓s,0        ⍝ spots where it can fit
+        p ← ⍸(1≠n↓s,0)∧n∧/×s        ⍝ spots where it can fit
         w ← ⍵[(≢s)⌊n+1+p]@p⊢⍵≠⍵     ⍝ and fits into next group
         p ← 1≠s                     ⍝ spots that shift left
         w[⍸p] +← ∊{⌽+\⌽⍵}¨w⊆⍨0,p    ⍝ shifted
