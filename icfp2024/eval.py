@@ -83,6 +83,7 @@ class U: # unary op
 		elif self.op == '$':
 			num = self.rhs.eval(env)
 			if num == 0: return '!'
+			if num < 0: raise Exception("$ for negative numbers not supported")
 			chars = []
 			while num:
 				chars.append(alpha[num % 94])
@@ -99,19 +100,19 @@ class B: # binary op
 		if self.op == '$': return f"({self.lhs} {self.rhs})"
 	def lisp(self):
 		if self.op == '$': return f"(apply {self.lhs.lisp()} {self.rhs.lisp()})"
-		elif self.op == '+': f"(+ {self.lhs.lisp()} {self.rhs.lisp()})"
-		elif self.op == '-': f"(- {self.lhs.lisp()} {self.rhs.lisp()})"
-		elif self.op == '*': f"(* {self.lhs.lisp()} {self.rhs.lisp()})"
-		elif self.op == '/': f"(/ {self.lhs.lisp()} {self.rhs.lisp()})"
-		elif self.op == '<': f"(< {self.lhs.lisp()} {self.rhs.lisp()})"
-		elif self.op == '>': f"(> {self.lhs.lisp()} {self.rhs.lisp()})"
-		elif self.op == '=': f"(= {self.lhs.lisp()} {self.rhs.lisp()})"
-		elif self.op == '|': f"(| {self.lhs.lisp()} {self.rhs.lisp()})"
-		elif self.op == '&': f"(& {self.lhs.lisp()} {self.rhs.lisp()})"
-		elif self.op == '.': f"(. {self.lhs.lisp()} {self.rhs.lisp()})"
-		elif self.op == 'T': f"(take {self.lhs.lisp()} {self.rhs.lisp()})"
-		elif self.op == 'D': f"(drop {self.lhs.lisp()} {self.rhs.lisp()})"
-		elif self.op == '%': f"(modulo {self.lhs.lisp()} {self.rhs.lisp()})"
+		elif self.op == '+': return f"(+ {self.lhs.lisp()} {self.rhs.lisp()})"
+		elif self.op == '-': return f"(- {self.lhs.lisp()} {self.rhs.lisp()})"
+		elif self.op == '*': return f"(* {self.lhs.lisp()} {self.rhs.lisp()})"
+		elif self.op == '/': return f"(/ {self.lhs.lisp()} {self.rhs.lisp()})"
+		elif self.op == '<': return f"(< {self.lhs.lisp()} {self.rhs.lisp()})"
+		elif self.op == '>': return f"(> {self.lhs.lisp()} {self.rhs.lisp()})"
+		elif self.op == '=': return f"(= {self.lhs.lisp()} {self.rhs.lisp()})"
+		elif self.op == '|': return f"(| {self.lhs.lisp()} {self.rhs.lisp()})"
+		elif self.op == '&': return f"(& {self.lhs.lisp()} {self.rhs.lisp()})"
+		elif self.op == '.': return f"(. {self.lhs.lisp()} {self.rhs.lisp()})"
+		elif self.op == 'T': return f"(take {self.lhs.lisp()} {self.rhs.lisp()})"
+		elif self.op == 'D': return f"(drop {self.lhs.lisp()} {self.rhs.lisp()})"
+		elif self.op == '%': return f"(modulo {self.lhs.lisp()} {self.rhs.lisp()})"
 		else: raise Exception(f"Unknown binary op {self.op}")
 	def compile(self): return f"B{self.op} {self.lhs.compile()} {self.rhs.compile()}"
 	def eval(self, env={}):
