@@ -4,10 +4,11 @@ saw ← 0⍴⍨4,⍴map ⋄ start ← ⊃⍸2=map
 walk ← { ⍺←0
     saw[⊂⍺,⍵]: 0
     saw[⊂⍺,⍵] ← 1
-    3:: +/,∨⌿saw
-    1=⍺⍺[⊂⍵+⍺⊃dir]: ⍵∇⍨4|1+⍺
-    ⍺∇⍵+⍺⊃dir
+    nxt ← ⍵+⍺⊃dir
+    ∨/∊(nxt=¯1)(nxt=⍴⍺⍺): +/,∨⌿saw
+    1=⍺⍺[⊂nxt]: (4|1+⍺)∇⍵
+    ⍺∇nxt
 }
 ⎕← map walk start
-⍝ part 2 takes ~35s
+⍝ part 2 takes ~30s
 ⎕← +/0={saw×←0 ⋄ (1@(⊂⍵)⊢map) walk start}¨⍸∨⌿saw
