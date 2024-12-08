@@ -2,8 +2,8 @@
 
 My solutions to Advent of Code.
 
-- 2015 - APL complete
-- 2016 - APL complete
+- 2015 - APL complete (missing 4 as it requires MD5)
+- 2016 - APL complete (missing 5, 14, 17 as they require MD5)
 - 2017 - APL complete
 - 2018 - APL complete
 - 2019 - Ruby complete
