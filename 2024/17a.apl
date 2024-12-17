@@ -25,4 +25,4 @@ native ← { ⍝ :: ∇A
 ⎕← run 0 1 2 3 a 0 0
 ⎕← native a
 
-⍝ part 2 uses native dfn and z3, see 17.py
+⍝ part 2 uses native dfn and z3, see 17b.py

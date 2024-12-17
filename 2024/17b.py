@@ -1,5 +1,6 @@
 import z3
 import re
+
 opt = z3.Optimize()
 s = z3.BitVec('s', 64)
 a, b, c = s, 0, 0
