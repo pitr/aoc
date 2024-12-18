@@ -22,7 +22,19 @@ native ← { ⍝ :: ∇A
     b ← n[3] xor 8|⍵
     (⍺,8|n[9] xor b xor ⌊⍵÷2*b) ∇ ⌊⍵÷2*3
 }
-⎕← run 0 1 2 3 a 0 0
-⎕← native a
+show ← {⊃{⍺,',',⍵}/⎕D[⍵]}
+⎕← show run 0 1 2 3 a 0 0
+⍝ or a much faster option
+⎕← show native a
 
-⍝ part 2 uses native dfn and z3, see 17b.py
+⍝ ⎕CY'dfns'
+⍝ ⎕ ← cmpx 'run 0 1 2 3 a 0 0' 'native a'
+⍝  run 0 1 2 3 a 0 0 → 2.1E¯4 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕
+⍝  native a          → 5.4E¯5 | -74% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕
+
+⎕← {
+    0=≢⍵: 'no solution'
+    n≡⍥≢⊃⍵: ⌊/8⊥¨⍵
+    next ← ,⍵∘.,⍳8
+    ∇ next/⍨{⍵≡¨⊂(-≢⊃⍵)↑n}native¨8⊥¨next
+} 1+⍳7
