@@ -20,6 +20,7 @@ native ← { ⍝ :: ∇A
     ⍺ ← ⍬
     0=⍵: ⍺
     b ← n[3] xor 8|⍵
+    ⍝      |--- depending on input, could be n[7]
     (⍺,8|n[9] xor b xor ⌊⍵÷2*b) ∇ ⌊⍵÷2*3
 }
 show ← {⊃{⍺,',',⍵}/⎕D[⍵]}
