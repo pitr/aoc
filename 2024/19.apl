@@ -1,10 +1,13 @@
-'memo' 'cache'⎕CY'dfns'
-t ← 'wubrg'(∊⍨⊆⊢)⊃f ← ⊃⎕NGET'in/19.txt'1
-count ← {
-    ⍵≡'': 1
-    n←∪≢¨t/⍨⊃¨t⍷¨⊂⍵
-    0=≢n: 0
-    +/count¨n↓¨⊂⍵
-} memo (C←cache ⍬)
-⎕← +/×c←count¨2↓f
+T ← 'wubrg'(∊⍨⊆⊢)⊃f ← ⊃⎕NGET'in/19.txt'1
+
+K ← ,⊂'' ⋄ V ← ,1 ⋄ S ← ∪≢¨T
+c ← {
+    (⊂⍵)∊K: ((K⍳⊂⍵)⊃V)
+    n ← ≢¨T∩S↑¨⊂⍵
+    0=≢n: 0⊣K V,∘⊂← ⍵ 0
+    v ← +/∇¨n↓¨⊂⍵
+    K V,∘⊂← ⍵ v
+    v
+}¨2↓f
+⎕← +/×c
 ⎕← +/c
