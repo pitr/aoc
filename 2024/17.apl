@@ -25,13 +25,7 @@ native ← { ⍝ :: ∇A
 }
 show ← {⊃{⍺,',',⍵}/⎕D[⍵]}
 ⎕← show run 0 1 2 3 a 0 0
-⍝ or a much faster option
 ⎕← show native a
-
-⍝ ⎕CY'dfns'
-⍝ ⎕ ← cmpx 'run 0 1 2 3 a 0 0' 'native a'
-⍝  run 0 1 2 3 a 0 0 → 2.1E¯4 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕
-⍝  native a          → 5.4E¯5 | -74% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕
 
 ⎕← {
     0=≢⍵: 'no solution'
