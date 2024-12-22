@@ -97,3 +97,7 @@ Positions are kept in ravel order. Path (`p`) is computed using a simple recursi
 ## Day 21
 
 Use a single map with both pads, since buttons are unique (except `A` which becomes `a` in the directional pad). `step` returns best path from `⍺` to `⍵` using directional pad buttons. `run` will take a pattern and create instructions for the previous robot by prepending `a` or `A` to it since all robots start there, and 2-wise reduce that just calls `step`. Further, `run` will use lanternfish trick to keep a single copy and a count for repeating sequences.
+
+## Day 22
+
+For performance reason due to absence of native bitwise XOR in APL, next secret (`next`) operates on 24-bit binary representation of all numbers (`N`) at the same time. Last digits of buyers at every iteration are accumulated in `P`. Part 1 is the sum of the result of `next⍣2000`. For part 2, sequences of 4-wise reduction of differences is stored in `S`. Mask of first instance of each sequence per buyer is stored in `M`. Next price after each sequence per buyer is in `N`. The final calculation is the maximum of sums of `N` grouped by sequence.
