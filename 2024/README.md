@@ -101,3 +101,7 @@ Use a single map with both pads, since buttons are unique (except `A` which beco
 ## Day 22
 
 For performance reasons due to absence of native bitwise XOR in APL, next secret (`next`) operates on 24-bit binary representation of all numbers (`N`) at the same time. Last digits of buyers at every iteration are accumulated in `P`. Part 1 is the sum of the result of `next⍣2000`. For part 2, sequences of 4-wise reduction of differences are stored in `S`. Mask of first instance of each sequence per buyer is stored in `M`. Next price after each sequence per buyer is in `N`. The final calculation is the maximum of sums of `N` grouped by sequence.
+
+## Day 23
+
+`V` are vertices, `E` is an adjacency matrix of edges. Part 1 is BFS from vertices that start with "t" traversed to depth 3. Duplicates are removed after sorting each path (`∪{⍵[⍋⍵]}¨`). Part 2 is a super simple search that always chooses the first valid neighbour, and is started at each vertex. For both parts, the next neighbour is always chosen of those that are connected to all previous vertices.
