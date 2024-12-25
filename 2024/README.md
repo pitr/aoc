@@ -105,3 +105,7 @@ For performance reasons due to absence of native bitwise XOR in APL, next secret
 ## Day 23
 
 `V` are vertices, `E` is an adjacency matrix of edges. Part 1 is BFS from vertices that start with "t" traversed to depth 3. Duplicates are removed after sorting each path (`∪{⍵[⍋⍵]}¨`). Part 2 is a super simple search that always chooses the first valid neighbour, and is started at each vertex. For both parts, the next neighbour is always chosen of those that are connected to all previous vertices.
+
+## Day 25
+
+Outer product of grids with an and-of-nands (`∧.⍲`) gets all overlaps.
