@@ -11,7 +11,7 @@ My solutions to Advent of Code.
 - 2021 - APL complete
 - 2022 - APL complete, some K
 - 2023 - APL complete
-- 2024 - APL ongoing
+- 2024 - APL complete
 
 ## APL setup
 

@@ -1,3 +1,5 @@
+⍝ import with T←⎕FIX'../tree.apl'
+
 :Namespace T
     I ← {⍺[⍵]}
 

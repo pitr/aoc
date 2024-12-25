@@ -4,6 +4,8 @@ Done in APL.
 
 Streamed on [Twitch](https://www.twitch.tv/pitrapen). Archived on [YouTube](https://www.youtube.com/playlist?list=PLUypSmvDdWt7mQJBGmkj4LE5Vu2_2g_kc).
 
+See parent [README.md](../README.md) for setup.
+
 ## Day 1
 
 Part 1 presorts each, and calculates the sum of absolute differences. Part 2 uses outer product to count the appearance of elements of one list in the other.
