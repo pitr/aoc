@@ -94,7 +94,7 @@ Computes `c` - count of ways to design the patterns using the specified towels (
 
 ## Day 20
 
-Positions are kept in ravel order. Path (`p`) is computed using a simple recursive function. Create outer product matrices for hamiltonian distances (`d`) and picosecond savings (`s`). Construction of distances avoids using a simpler `∘.{+/|⍺-⍵}⍨⍸` (or even `+/¨|∘.-⍨⍸`) as it gives `WS FULL` error (due to a ~100 million tiny boxed arrays being create) and processes one axis at a time. Both matrices use ravel order of points on the path (hence the use of `⍋`). Then find combinations of distances and savings needed.
+Positions are kept in ravel order. Path (`p`) is computed using a step function until fixed point (the end). Create outer product matrices for hamiltonian distances (`d`) and picosecond savings (`s`). Construction of distances avoids using a simpler `∘.{+/|⍺-⍵}⍨⍸` (or even `+/¨|∘.-⍨⍸`) as it gives `WS FULL` error (due to a ~100 million tiny boxed arrays being created) and processes one axis at a time. Both matrices use ravel order of points on the path (hence the use of `⍋`). Then find combinations of distances and savings needed.
 
 ## Day 21
 
