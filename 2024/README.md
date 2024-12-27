@@ -108,6 +108,10 @@ For performance reasons due to absence of native bitwise XOR in APL, next secret
 
 `V` are vertices, `E` is an adjacency matrix of edges. Part 1 is BFS from vertices that start with "t" traversed to depth 3. Duplicates are removed after sorting each path (`∪{⍵[⍋⍵]}¨`). Part 2 is a super simple search that always chooses the first valid neighbour, and is started at each vertex. For both parts, the next neighbour is always chosen of those that are connected to all previous vertices.
 
+## Day 24
+
+Part 1 is done by converting input to APL and eval-ing. Part 2 is done by finding instructions that don't fit into [the full adder circuit (with carry bit)](https://en.wikipedia.org/wiki/Adder_(electronics)).
+
 ## Day 25
 
 Outer product of grids with an and-of-nands (`∧.⍲`) gets all overlaps.
