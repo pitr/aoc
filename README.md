@@ -1,6 +1,6 @@
 # Advent of Code
 
-My solutions to Advent of Code.
+My solutions to Advent of Code. Some solutions were either livestreamed or explained on [YouTube](https://www.youtube.com/@arrayaccessor/playlists).
 
 - 2015 - APL complete (missing 4 as it requires MD5)
 - 2016 - APL complete (missing 5, 14, 17 as they require MD5)
