@@ -3,3 +3,11 @@
 Done in APL.
 
 See parent [README.md](../README.md) for setup.
+
+## Day 1
+
+Both parts done the same way, except part 2 breaks up rotations into 1 click moves.
+
+## Day 2
+
+Regex...
