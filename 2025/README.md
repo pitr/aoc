@@ -14,7 +14,7 @@ Regex...
 
 ## Day 3
 
-Both parts are solved in a greedy, recursive way.
+Dynamic programming using max scan.
 
 ## Day 4
 
