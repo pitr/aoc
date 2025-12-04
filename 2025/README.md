@@ -15,3 +15,7 @@ Regex...
 ## Day 3
 
 Both parts are solved in a greedy, recursive way.
+
+## Day 4
+
+Simple stencil solution.
