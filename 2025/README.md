@@ -22,4 +22,4 @@ Simple stencil solution.
 
 ## Day 5
 
-Merge ranges using max scan and ⌸ to remove overlapping ranges. Part 1 is then trivial with ⍸ (interval index). Part 2 is similarly trivial, sum of differences. Since input numbers are sufficiently large, `⎕FR` must be bumped.
+Fix ranges using max scan. Part 1 is then trivial with ⍸ (interval index). Part 2 is similarly trivial - alternating sum.
