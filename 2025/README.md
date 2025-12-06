@@ -23,3 +23,7 @@ Simple stencil solution.
 ## Day 5
 
 Fix ranges using max scan. Part 1 is then trivial with ⍸ (interval index). Part 2 is similarly trivial - alternating sum.
+
+## Day 6
+
+Converts input to strings like `×/123 45 6` and evaluates.
