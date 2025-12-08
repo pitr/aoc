@@ -31,3 +31,7 @@ Convert input to strings like `×/123 45 6` and evaluate.
 ## Day 7
 
 Compute part 2 using cumulative traversal, where last column is the number of timelines per position. Part 1 is then simply counting timeline splits.
+
+## Day 8
+
+Run union-find until parent vector has a single common root.
