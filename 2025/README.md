@@ -4,6 +4,23 @@ Done in APL.
 
 See parent [README.md](../README.md) for setup.
 
+| Day | Time (ms) |
+| --- | --------- |
+| 1   |      54.1 |
+| 2   |    3981.6 |
+| 3   |      34.2 |
+| 4   |      45.7 |
+| 5   |      37.5 |
+| 6   |      47.3 |
+| 7   |      34.8 |
+| 8   |     776.7 |
+| 9   |     111.8 |
+| 10  |       N/A |
+| 11  |       N/A |
+| 12  |       N/A |
+
+Note: includes interpreter start time.
+
 ## Day 1
 
 Both parts done the same way, except part 2 breaks up rotations into 1 click moves.
