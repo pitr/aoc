@@ -35,3 +35,7 @@ Compute part 2 using cumulative traversal, where last column is the number of ti
 ## Day 8
 
 Run union-find until parent vector has a single common root.
+
+## Day 9
+
+Part 1 is a trivial outer product. For part 2, rectangles that have inner tiles are excluded. Code is heavily optimized by working on one axis at a time.
