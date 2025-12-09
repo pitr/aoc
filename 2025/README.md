@@ -35,7 +35,7 @@ Dynamic programming using max scan.
 
 ## Day 4
 
-Simple stencil solution.
+Simple 3-wise reduction solution. Faster than stencil.
 
 ## Day 5
 
