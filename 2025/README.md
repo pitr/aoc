@@ -13,7 +13,7 @@ See parent [README.md](../README.md) for setup.
 | 5   |      37.5 |
 | 6   |      47.3 |
 | 7   |      34.8 |
-| 8   |     776.7 |
+| 8   |      99.6 |
 | 9   |     111.8 |
 | 10  |       N/A |
 | 11  |       N/A |
@@ -51,7 +51,9 @@ Compute part 2 using cumulative traversal, where last column is the number of ti
 
 ## Day 8
 
-Run union-find until parent vector has a single common root.
+Part 1 uses transitive closure (`∨.∧⍨⍣≡`) to find all connected circuits. Part 2 is about finding the furthest junction box and its closest neighbour.
+
+Previous implementation used union-find with recusion, but the iterative approach was significantly slower. Another improvement was processing one axis at a time.
 
 ## Day 9
 
