@@ -16,7 +16,7 @@ See parent [README.md](../README.md) for setup.
 | 8   |      99.6 |
 | 9   |     111.8 |
 | 10  |       N/A |
-| 11  |       N/A |
+| 11  |     221.4 |
 | 12  |       N/A |
 
 Note: includes interpreter start time.
@@ -58,3 +58,7 @@ Previous implementation used union-find with recusion, but the iterative approac
 ## Day 9
 
 Part 1 is a trivial outer product. For part 2, rectangles that have inner tiles are excluded. Code is heavily optimized by working on one axis at a time.
+
+## Day 11
+
+Use fixpoint of dot product over adjacency matrix to find paths. Part 2 is a product of subpaths.
