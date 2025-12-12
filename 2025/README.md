@@ -17,7 +17,7 @@ See parent [README.md](../README.md) for setup.
 | 9   |     111.8 |
 | 10  |       N/A |
 | 11  |     221.4 |
-| 12  |       N/A |
+| 12  |      48.5 |
 
 Note: includes interpreter start time.
 
@@ -62,3 +62,7 @@ Part 1 is a trivial outer product. For part 2, rectangles that have inner tiles 
 ## Day 11
 
 Use fixpoint of dot product over adjacency matrix to find paths. Part 2 is a product of subpaths.
+
+## Day 12
+
+Just checks if regions are large enough for all units of presents.
