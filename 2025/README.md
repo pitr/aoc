@@ -15,7 +15,7 @@ See parent [README.md](../README.md) for setup.
 | 7   |      34.8 |
 | 8   |      99.6 |
 | 9   |     111.5 |
-| 10  |       N/A |
+| 10  |    1284.0 |
 | 11  |     221.4 |
 | 12  |      48.3 |
 
@@ -58,6 +58,12 @@ Previous implementation used union-find with recusion, but the iterative approac
 ## Day 9
 
 Part 1 is a trivial outer product. For part 2, rectangles that have inner tiles are excluded. Code is heavily optimized by working on one axis at a time.
+
+## Day 10
+
+Pre-compute power set for each button combination. Part 1 finds all matches (`∧.=`) in a dot product of combinations and buttons. Part 2 implements the odd/even recursive solution described in [this post](https://old.reddit.com/r/adventofcode/comments/1pk87hl). This recursive function is memoized.
+
+Originally, part 1 was BFS on button presses and part 2 used [SciPy](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linprog.html).
 
 ## Day 11
 
