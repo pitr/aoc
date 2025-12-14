@@ -67,7 +67,7 @@ Originally, part 1 was BFS on button presses and part 2 used [SciPy](https://doc
 
 ## Day 11
 
-Use fixpoint of dot product over adjacency matrix to find paths. Part 2 is a product of subpaths.
+`paths` uses fixpoint of dot product over adjacency matrix to find paths. Part 2 is a product of subpaths.
 
 ## Day 12
 

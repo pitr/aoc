@@ -12,6 +12,7 @@ My solutions to Advent of Code. Some solutions were either livestreamed or expla
 - 2022 - APL complete, some K
 - 2023 - APL complete
 - 2024 - APL complete
+- 2025 - APL complete
 
 Also, https://everybody.codes is under the corresponding folder.
 
@@ -19,7 +20,7 @@ Also, https://everybody.codes is under the corresponding folder.
 
 ## APL setup
 
-`⎕IO` is always assumed to be 0. Solutions developed iteratively in Sublime Text, using the Build system.
+`⎕IO` is always assumed to be 0. Solutions developed iteratively in Sublime Text, using the Build system (see [demo here](https://www.youtube.com/watch?v=6Z7o6pRonoY)).
 
 Requirements:
 
