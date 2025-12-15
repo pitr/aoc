@@ -7,7 +7,7 @@ See parent [README.md](../README.md) for setup.
 | Day | Time (ms) |
 | --- | --------- |
 | 1   |      44.1 |
-| 2   |    3981.6 |
+| 2   |      40.3 |
 | 3   |      34.2 |
 | 4   |      45.7 |
 | 5   |      37.5 |
@@ -27,7 +27,9 @@ Both parts done the same way, except part 2 breaks up rotations into 1 click mov
 
 ## Day 2
 
-Regex...
+Checks each range against possible ways to repeat (e.g. 2 6 means all 2-digit numbers repeated to make a 6 digit number). Part 2 needs to correct for double counting single digit numbers repeated few different ways.
+
+Originally solved with regex.
 
 ## Day 3
 
@@ -35,7 +37,7 @@ Dynamic programming using max scan.
 
 ## Day 4
 
-Simple 3-wise reduction solution. Faster than stencil.
+Simple 3-wise reductions. Faster than stencil.
 
 ## Day 5
 
