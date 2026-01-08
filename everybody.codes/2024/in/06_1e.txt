@@ -1,0 +1,12 @@
+RR:A,B,C
+B:BUG
+BIG:ANT
+ANT:@
+A:D,E
+B:F,@
+C:G,H
+D:@
+E:@
+F:@
+G:@
+H:@
